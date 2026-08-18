@@ -45,3 +45,4 @@ I demonstrated class and instance namespaces by creating two firewall objects an
 I also demonstrated shallow and deep copying using the firewall's list of allowed ports. After modifying the original list, the shallow copy reflected the modification because it shared the nested list, while the deep copy remained unchanged.
 
 As my student-created extension, I added the `is_port_allowed()` method. This method checked whether a specific port existed in the firewall's allowed ports list. I tested the program with ports 443 and 21 and verified that the program correctly returned `True` and `False`.
+I also tested an edge case by passing None to the is_port_allowed() method. The method returned False because the invalid value was not contained in the list of allowed ports. This demonstrated that the method could handle a missing or invalid value without causing the program to fail.
