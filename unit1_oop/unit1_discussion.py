@@ -25,7 +25,14 @@ from copy import copy, deepcopy
 # Replace the pass statement with your implementation.
 
 class ParentClass:
-    pass
+    device_category = "Network Device"
+
+    def __init__(self, name, ip_address):
+        self.name = name
+        self.ip_address = ip_address
+
+    def display_info(self):
+        return f"Device: {self.name}, IP Address: {self.ip_address}"
 
 
 # TODO 2:
@@ -41,7 +48,25 @@ class ParentClass:
 # Replace the pass statement with your implementation.
 
 class ChildClass(ParentClass):
-    pass
+    device_type = "Firewall"
+
+    def __init__(self, name, ip_address, security_level, allowed_ports):
+        super().__init__(name, ip_address)
+        self.security_level = security_level
+        self.allowed_ports = allowed_ports
+
+    def display_info(self):
+        return (
+            f"Firewall: {self.name}, IP Address: {self.ip_address}, "
+            f"Security Level: {self.security_level}"
+        )
+
+    def display_ports(self):
+        return f"Allowed Ports: {self.allowed_ports}"
+
+    # Student-created extension
+    def is_port_allowed(self, port):
+        return port in self.allowed_ports
 
 
 # TODO 3:
@@ -57,7 +82,25 @@ class ChildClass(ParentClass):
 
 def demonstrate_namespaces():
     print("\n=== Namespace Demonstration ===")
-    print("TODO: Implement namespace demonstration")
+
+    firewall1 = ChildClass("Main Firewall", "192.168.1.1", "High", [22, 80, 443])
+    firewall2 = ChildClass("Backup Firewall", "192.168.1.2", "Medium", [80, 443])
+
+    # Access class variable through the class
+    print("Class variable through class:", ChildClass.device_type)
+
+    # Access the same class variable through an object
+    print("Class variable through object:", firewall1.device_type)
+
+    # Add an attribute to only one instance
+    firewall1.location = "Main Office"
+
+    # Display instance namespaces
+    print("Firewall 1 namespace:", firewall1.__dict__)
+    print("Firewall 2 namespace:", firewall2.__dict__)
+
+    # Display information about the class namespace
+    print("Child class namespace:", ChildClass.__dict__)
 
 
 # TODO 4:
@@ -73,7 +116,28 @@ def demonstrate_namespaces():
 
 def demonstrate_copying():
     print("\n=== Copy Demonstration ===")
-    print("TODO: Implement shallow copy and deep copy demonstration")
+
+    original = ChildClass(
+        "Firewall Copy Test",
+        "10.0.0.1",
+        "High",
+        [22, 80, 443]
+    )
+
+    shallow_copy = copy(original)
+    deep_copy = deepcopy(original)
+
+    # A shallow copy creates a new object, but nested mutable objects
+    # such as lists are still shared with the original object.
+
+    # A deep copy creates a completely independent copy, including
+    # nested mutable objects.
+
+    original.allowed_ports.append(8080)
+
+    print("Original object ports:", original.allowed_ports)
+    print("Shallow copy ports:", shallow_copy.allowed_ports)
+    print("Deep copy ports:", deep_copy.allowed_ports)
 
 
 # TODO 5:
@@ -89,13 +153,26 @@ def demonstrate_copying():
 def main():
     print("=== Unit 1 OOP Assignment ===")
 
-    print("\nTODO: Create and test your parent object")
+    print("\n=== Parent Object ===")
+    router = ParentClass("Home Router", "192.168.1.1")
+    print(router.display_info())
 
-    print("\nTODO: Create and test your child object")
+    print("\n=== Child Object ===")
+    firewall = ChildClass(
+        "Main Firewall",
+        "192.168.1.2",
+        "High",
+        [22, 80, 443]
+    )
+
+    print(firewall.display_info())
+    print(firewall.display_ports())
+
+    # Demonstrate the student-created extension
+    print("Is port 443 allowed?", firewall.is_port_allowed(443))
+    print("Is port 21 allowed?", firewall.is_port_allowed(21))
 
     demonstrate_namespaces()
     demonstrate_copying()
-
-
 if __name__ == "__main__":
     main()
