@@ -171,6 +171,8 @@ def main():
     # Demonstrate the student-created extension
     print("Is port 443 allowed?", firewall.is_port_allowed(443))
     print("Is port 21 allowed?", firewall.is_port_allowed(21))
+    # Edge case: test an invalid value that is not a valid port
+print("Is invalid port None allowed?", firewall.is_port_allowed(None))
 
     demonstrate_namespaces()
     demonstrate_copying()
