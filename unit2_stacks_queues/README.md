@@ -27,10 +27,9 @@ Complete all TODO sections:
 
 ## Discussion Board Reflection
 
-After completing the programming assignment, add this reflection to your initial discussion post in LEO.
+While completing this assignment, I learned how stacks and queues store and retrieve data differently. I implemented stack operations such as push, pop, and peek, as well as queue operations such as enqueue, dequeue, and front. I also learned how to use Python's `deque` to efficiently manage a queue.
 
-Your reflection should be approximately 150–200 words and address the following questions:
+One challenge I encountered was making sure the program handled empty stacks and queues without causing errors. I addressed this by checking whether each structure was empty before attempting operations such as pop, peek, dequeue, or front. I also tested single-item structures to verify that they became empty after their only item was removed.
 
-1. What concepts or skills did you learn while completing this assignment?
-2. What challenges did you encounter, and how did you overcome them?
-3. Explain the differences between stacks and queues as this relates to real-world applications.
+The stack demonstrated LIFO (Last-In, First-Out) behavior using browser history. The most recently visited page was the first one removed. The queue demonstrated FIFO (First-In, First-Out) behavior using customers waiting at a coffee shop. The first customer to enter the line was the first customer served. These examples helped me understand why different applications require different data structures.
+
