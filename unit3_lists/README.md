@@ -2,7 +2,7 @@
 
 ## Overview
 
-This assignment examines insertion, deletion, and searching in Python lists.
+This assignment examined insertion, deletion, and searching in Python lists.
 
 ## Learning Objectives
 
@@ -13,11 +13,32 @@ This assignment examines insertion, deletion, and searching in Python lists.
 
 ## Requirements
 
-1. Test insertion at the beginning, middle, and end.
-2. Test deletion at the beginning, middle, and end.
-3. Search for existing and missing values.
-4. Demonstrate edge cases.
-5. Create a real-world scenario.
+1. Tested insertion at the beginning, middle, and end.
+2. Tested deletion at the beginning, middle, and end.
+3. Searched for existing and missing values.
+4. Demonstrated edge cases.
+5. Created a real-world scenario using a music playlist.
+
+## Implementation
+
+I implemented a music playlist to demonstrate common Python list operations. 
+Songs were inserted at the beginning, middle, and end of the playlist. I also 
+removed songs from each of these positions and displayed the updated playlist 
+after each operation.
+
+For searching, I implemented a linear search that checked each song in order 
+until the requested value was found. The program returned the song's index when 
+it was found and returned -1 when it was not found.
+
+I also tested edge cases, including deleting with an invalid index, deleting 
+from an empty list, and inserting a song into an empty list. Invalid deletion 
+operations returned None instead of causing an error.
+
+## Real-World Scenario
+
+I used a music playlist as my real-world scenario. A playlist is a good example 
+of a list because songs can be inserted, removed, searched for, and maintained 
+in a specific order.
 
 ## Discussion Board Reflection
 
