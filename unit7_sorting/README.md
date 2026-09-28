@@ -13,11 +13,11 @@ This assignment compared Bubble Sort and Merge Sort. I implemented both sorting 
 
 ## Requirements
 
-1. I tested Bubble Sort and Merge Sort using unsorted datasets.
-2. I used multiple datasets with different values.
-3. I demonstrated edge cases, including an empty list and a list containing duplicate values.
-4. I compared the performance and behavior of Bubble Sort and Merge Sort.
-5. I examined how sorting algorithms can be applied to real-world situations.
+1. Test Bubble Sort and Merge Sort using unsorted datasets.
+2. Use multiple datasets with different values.
+3. Demonstrate edge cases, including an empty list and a list containing duplicate values.
+4. Compare the performance and behavior of Bubble Sort and Merge Sort.
+5. Examine how sorting algorithms can be applied to real-world situations.
 
 ## Implementation Summary
 
@@ -33,12 +33,3 @@ I tested an empty list to verify that both algorithms could handle a dataset con
 
 I also tested a list containing duplicate values. Both sorting algorithms preserved all duplicate values and returned them in the correct sorted order.
 
-## Discussion Board Reflection
-
-After completing the programming assignment, add this reflection to your initial discussion post in LEO.
-
-Your reflection should be approximately 150–200 words and address the following questions:
-
-1. What concepts or skills did you learn while completing this assignment?
-2. What challenges did you encounter, and how did you overcome them?
-3. Compare and contrast each sorting algorithm based on efficiency differences, tradeoffs made, and when to use each.
